@@ -8,10 +8,9 @@ part 'get_dokter_resp.g.dart';
 class GetDokterResp extends GeneralResp {
   Dokter dokter;
 
-  GetDokterResp({String success, String pesan, this.dokter})
-      : super(pesan: pesan, success: success);
+  GetDokterResp({var success, String pesan, this.dokter}) : super(pesan: pesan, success: success);
 
-  factory GetDokterResp.fromJson(Map<String, dynamic> json) =>
-      _$GetDokterRespFromJson(json);
+  factory GetDokterResp.fromJson(Map<String, dynamic> json) => _$GetDokterRespFromJson(json);
+
   Map<String, dynamic> toJson() => _$GetDokterRespToJson(this);
 }

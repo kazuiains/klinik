@@ -1,4 +1,5 @@
 import 'package:klinik/core/blocs/base_bloc.dart';
+import 'package:klinik/core/helpers/debug_utils.dart';
 import 'package:klinik/core/models/dokter/all_dokter_resp.dart';
 import 'package:klinik/core/models/general/general_resp.dart';
 import 'package:klinik/core/models/general/general_req.dart';
@@ -22,7 +23,9 @@ class AllDokterBloc extends BaseBloc {
     final request = GeneralReq(aksi: allDokter);
     respDokter = await _repo.allDokter(request: request);
 
-    if (respDokter.success == "1") {
+    logD("response bloc: $respDokter");
+
+    if (respDokter.pesan == "success") {
       if (onSuccess != null) onSuccess(respDokter);
       dokterSink(respDokter);
     } else {
@@ -36,6 +39,6 @@ class AllDokterBloc extends BaseBloc {
   @override
   void dispose() {
     super.dispose();
-    _dokterSubject.close();
+    _dokterSubject?.close();
   }
 }

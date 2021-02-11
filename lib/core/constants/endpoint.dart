@@ -1,5 +1,5 @@
 //Url Endpoint
-const String baseUrl = "api.adiyusuf.com/klinik/api.php";
+const String baseUrl = 'http://api.adiyusuf.com/klinik';
 
 //Aksi
 const String addDokter = "tambah_dokter";

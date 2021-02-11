@@ -36,7 +36,7 @@ class _ListDokterPertamaScreenState extends State<ListDokterPertamaScreen>
         child: StreamBuilder<AllDokterResp>(
           stream: _bloc.dokterStream,
           builder: (context, snapshot) {
-            logD(snapshot.data.toString());
+            logD("view log: $snapshot");
             if (snapshot.hasData && snapshot.data.data != null) {
               return ListView.builder(
                 itemCount: snapshot.data.data?.length,

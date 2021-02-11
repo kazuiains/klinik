@@ -8,7 +8,7 @@ part 'all_dokter_resp.g.dart';
 class AllDokterResp extends GeneralResp{
 List<Dokter> data;
 
-AllDokterResp({String success, String pesan, this.data}):super();
+AllDokterResp({var success, String pesan, this.data}):super(success: success, pesan: pesan);
 
 factory AllDokterResp.fromJson(Map<String, dynamic> json) => _$AllDokterRespFromJson(json);
 Map<String, dynamic> toJson() => _$AllDokterRespToJson(this);

@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'general_resp.g.dart';
 @JsonSerializable()
 class GeneralResp {
-  String success;
+  var success;
   String pesan;
 
   GeneralResp({this.success, this.pesan});
@@ -14,4 +14,5 @@ class GeneralResp {
   }
 
   factory GeneralResp.fromJson(Map<String, dynamic> json) => _$GeneralRespFromJson(json);
+
 }

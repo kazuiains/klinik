@@ -3,6 +3,7 @@ import 'package:rxdart/subjects.dart';
 
 class BaseBloc extends ChangeNotifier {
   final _isLoadingSubject = BehaviorSubject<bool>.seeded(false);
+
   Stream<bool> get isLoading => _isLoadingSubject.stream;
 
   void setBusy() {
@@ -11,6 +12,10 @@ class BaseBloc extends ChangeNotifier {
 
   void setIdle() {
     _isLoadingSubject.add(false);
+  }
+
+  void setErro() {
+    _isLoadingSubject.addError("error");
   }
 
   void dispose() {
